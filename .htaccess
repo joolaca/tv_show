@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^$
+
+    #set default controller and seo uri
+    RewriteRule ^([^/\.]+)/?$ index.php?menu1=$1                                        [QSA]
+	#default menu
+	RewriteRule ^$ index.php?menu1=index                                                [QSA]
+
+</IfModule>

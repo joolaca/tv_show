@@ -1,0 +1,11 @@
+<?php echo $search_block ?>
+
+<?php foreach($shows as $show): ?>
+<div>
+        <?php foreach($this->Show->getAllFildes() as $field): ?>
+
+            <?php echo $field .':' . $show[$field] ?>
+
+        <?php endforeach; ?>
+</div>
+<?php endforeach; ?>

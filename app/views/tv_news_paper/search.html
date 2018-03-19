@@ -1,0 +1,41 @@
+<h4>Keresés vagyok</h4>
+<form method="POST" id="monitor_search_form">
+
+    title:
+    <input type="text" name="title" value="<?php $_SESSION['search_filter']['title'] ?>">
+
+    date:
+    <select name="date">
+        <option value=""></option>
+        <?php foreach($dates as $date): ?>
+
+
+            <?php if ($_SESSION['search_filter']['date'] == $date ): ?>
+                <option selected value="<?php echo $date ?>"><?php echo $date ?></option>
+            <?php else: ?>
+                <option value="<?php echo $date ?>"><?php echo $date ?></option>
+            <?php endif; ?>
+
+        <?php endforeach; ?>
+    </select>
+
+    channels:
+    <select name="channel" >
+        <option value=""></option>
+        <?php foreach($channels as $channel): ?>
+
+            <?php if ($_SESSION['search_filter']['channel'] == $channel ): ?>
+                <option selected value="<?php echo $channel ?>"><?php echo $channel ?></option>
+            <?php else: ?>
+                <option value="<?php echo $channel ?>"><?php echo $channel ?></option>
+            <?php endif; ?>
+
+
+        <?php endforeach; ?>
+    </select>
+
+    <div>
+        <input type="submit" value="search">
+    </div>
+    
+</form>
